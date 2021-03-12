@@ -1,7 +1,7 @@
 # Branches
 The `main` branch shows a simple example of the use of Contexts.
 
-The `logic-separation` branch shows a possible way of using Contexts instead of Redux, separating logic for storage and management of data into separate Stores.
+The `logic-separation` branch shows a possible way of using Contexts instead of Redux, segregating logic for storage and management of data into separate Stores.
 
 ---
 

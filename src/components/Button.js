@@ -10,22 +10,17 @@ class Button extends React.Component {
 		return value === "english" ? "Submit" : "Invia";
 	}
 
-	// alternative method which avoids creating a function instance inside render method
-	// can be used by setting the child of the LanguageContext.Consumer as: {this.renderTextAlt()}
-	renderTextAlt = () => value => {
-		return value === "english" ? "Submit (alt)" : "Invia (alt)";
-	}
-
 	render() {
 		{/* child of a Consumer has to be a function! */ }
 		return (
 			<ColorContext.Consumer>
-				{color =>
-					<button className={`ui button ${color}`}>
+				{({ color }) => {
+					return (<button className={`ui button ${color}`}>
 						<LanguageContext.Consumer>
 							{({ language }) => this.renderText(language)}
 						</LanguageContext.Consumer>
-					</button>}
+					</button>)
+				}}
 			</ColorContext.Consumer>
 		);
 	}
